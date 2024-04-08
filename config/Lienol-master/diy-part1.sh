@@ -11,4 +11,9 @@
 
 # other
 # rm -rf package/utils/{ucode,fbtest}
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+svn co https://github.com/sbwml/luci-app-mosdns/tree/v5/luci-app-mosdns package/luci-app-mosdns
+svn co https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package/luci-app-openclash
+echo >> feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+./scripts/feeds update istore
+./scripts/feeds install -d y -p istore luci-app-store
